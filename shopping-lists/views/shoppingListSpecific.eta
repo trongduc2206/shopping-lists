@@ -1,0 +1,39 @@
+<% layout("./layouts/layout.eta") %>
+<div class="mt-5">
+<a href="/lists">Shopping lists</a>
+</div>
+
+<h1 class="mt-3 mb-5"><%= it.name %> </h1>
+
+
+<div class="container mt-5 mb-3 pt-3 pb-3 bg-light rounded">
+<h2>Add a item</h2>
+
+<form method="POST" action="/lists/<%= it.id %>/items">
+  Name: <input type="text" name="name" />
+  <input type="submit" value="Create item!" />
+</form>
+</div>
+
+
+<div class="container mt-5 mb-3 pt-3 pb-3 bg-green rounded">
+<h2>Active items</h2>
+<% if (it.items && it.items.length > 0) { %>
+<ul>
+<% it.items.forEach((item) => { %>
+  <li> 
+    <% if (item.collected) { %>
+        <del><%= item.name %></del>
+    <% } else { %>
+        <%= item.name %>
+        <form method="POST" action="/lists/<%= it.id %>/items/<%= item.id %>/collect">
+            <input type="submit" value="Mark collected!" data-testid="<%= item.name %>"/>
+        </form>
+    <% } %>
+  </li>
+<% }); %>
+</ul>
+<% } else { %> 
+<p>None available</p>
+<% } %>
+</div>
