@@ -3,6 +3,8 @@
 A web application that is used as a shared shopping list. User can manage shared shoppling lists as well as items in those lists.
 
 ## Online location
+Application is deployed on render.com so it may take a while for the application to start up.
+
 You can access the web application by the [link](https://shopping-lists-eh3e.onrender.com/)
 
 ## Run the application locally
@@ -33,10 +35,10 @@ docker compose rm -sf
 ```bassh
 docker compose run --entrypoint=npx e2e-playwright playwright test && docker compose rm -sf
 ```
-
+<!-- 
 The result after running test would be like this:
 
-![Test result](test-rs.png)
+![Test result](test-rs.png) -->
 
 If some tests fail, it might be because the data in database has not been cleared before running the tests, which is done by 
 ```bash
