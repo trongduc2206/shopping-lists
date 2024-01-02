@@ -3,7 +3,7 @@
 A web application that is used as a shared shopping list. User can manage shared shoppling lists as well as items in those lists.
 
 ## Online location
-You can access the web application by the [link]()
+You can access the web application by the [link](https://shopping-lists-eh3e.onrender.com/)
 
 ## Run the application locally
 
